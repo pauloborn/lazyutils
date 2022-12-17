@@ -8,7 +8,7 @@ class Secrets(Enum):
     AWS_SECRETS_MANAGER = auto()
 
 
-def SecretsFactory(vault: Secrets):
+def SecretsFactory(vault: Secrets, path=''):
     if vault == Secrets.LOCAL:
         local = LocalSecrets()
         local.load()

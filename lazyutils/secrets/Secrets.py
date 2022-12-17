@@ -4,11 +4,11 @@ from lazyutils.secrets.SecretsException import SecretsNotFoundException
 class Secrets(object):
     _secrets: dict = None
 
-    def _load(self):
+    def _load(self, path: str):
         pass
 
-    def load(self):
-        self._load()
+    def load(self, path=''):
+        self._load(path)
         self.__dict__.update(self._secrets)
 
         if not self._secrets and self._secrets == {}:

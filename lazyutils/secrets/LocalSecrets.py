@@ -9,8 +9,8 @@ class LocalSecrets(Secrets):
     _folder = None
     _file = None
 
-    def _load(self):
-        self._config = Config()
+    def _load(self, path: str):
+        self._config = Config(path)
         self._folder = self._config['Secrets']['folder']
         self._file = self._config['Secrets']['file']
 
