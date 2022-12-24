@@ -1,5 +1,6 @@
 import configparser
 import logging
+import os
 
 from lazyutils.structure.Singleton import Singleton
 
@@ -7,11 +8,13 @@ from lazyutils.structure.Singleton import Singleton
 class Configuration(Singleton):
     config = None
     _log_level: str = 'DEBUG'
+    config_path: str
 
     def __init__(self, config_file_path: str = './config/example-config.ini'):
         if self.config is not None:
             return
 
+        self.config_path = config_file_path
         self.config = configparser.ConfigParser()
         sections_read = self.config.read(config_file_path)
 
