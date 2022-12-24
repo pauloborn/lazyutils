@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 setup(
     name='lazydev-utils',
     packages=setuptools.find_packages(),
-    version='0.1.3',
+    version='0.1.4',
     description='Lazy utils with broad different function to improve python implementation',
     author='Paulo Born',
     license='MIT',

@@ -49,6 +49,6 @@ def Config(filepath: str = ''):
 
 
 def ConfigFromEnv():
-    base_path = os.getenv("CONFIG_PATH") if type(os.getenv("CONFIG_PATH")) is None else os.sep
+    base_path = os.sep if isinstance(os.getenv("CONFIG_PATH"), type(None)) else os.getenv("CONFIG_PATH")
     config_path = os.path.join(base_path, 'config', 'config.ini')
     return Config(config_path)
