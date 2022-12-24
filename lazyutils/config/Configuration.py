@@ -43,3 +43,9 @@ class Configuration(Singleton):
 def Config(filepath: str = ''):
     c = Configuration() if filepath == '' else Configuration(filepath)
     return c.config
+
+
+def ConfigFromEnv():
+    base_path = os.getenv("CONFIG_PATH") if type(os.getenv("CONFIG_PATH")) is None else os.sep
+    config_path = os.path.join(base_path, 'config', 'config.ini')
+    return Config(config_path)
